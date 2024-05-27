@@ -9,6 +9,34 @@ $fa-font-path: "../webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
-    color: $text-color;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// reset
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// general
+body {
+    font-family: $basefont;
+}
+
+main {
+    padding-top: 125px;
+}
+
+// utilities
+.debug {
+    border: 1px solid red;
+}
+
+// nav 
+nav {
+    width: 100%;
+    background-color: $main-white-color;
+    padding: 10px;
 }
