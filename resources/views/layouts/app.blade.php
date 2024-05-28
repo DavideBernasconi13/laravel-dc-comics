@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Comics @yield('title','- Home')</title>
+    <title>@yield('title','template')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,9 +17,9 @@
 
 <body>
     @include('partials.header')
-    <main>
-        @yield('content')
-    </main>
+
+    @yield('content')
+
     @include('partials.footer')
 
 </body>
