@@ -37,7 +37,8 @@
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
                 <select class="form-control" id="type" name="type" required>
-                    <option value="comic-book">comic book</option>
+                    <option value="comic book">comic book</option>
+                    <option value="graphic novel">graphic novel</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Crea</button>
