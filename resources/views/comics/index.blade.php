@@ -28,6 +28,8 @@
                     </div>
                     <div class="card-footer">
                         <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi dettaglio</a>
+                        <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Modifica</a>
+                        <a href="#" class="btn btn-danger">Cancella</a>
                     </div>
                 </div>
             </div>
