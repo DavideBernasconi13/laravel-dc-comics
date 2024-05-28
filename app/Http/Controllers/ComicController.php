@@ -63,7 +63,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view("comics.edit", compact("comic"));
     }
 
     /**
@@ -73,10 +73,11 @@ class ComicController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    //public function update(Request $request, $id)
-    //{
-    //
-    //}
+    public function update(Request $request, $id)
+    {
+        $comic = Comic::find($id);
+        $form_data = $request->all();
+    }
 
     /**
      * Remove the specified resource from storage.
