@@ -1,7 +1,7 @@
 <header class="position-fixed z-3 top-0 shadow-lg w-100 debug">
     <nav class="container d-flex">
         <div class="logoheader">
-            <img src="img/dc-logo.png" alt="dclogo" />
+            <img src="../img/dc-logo.png" alt="dclogo" />
         </div>
         <div role="navigation" class="menubar">
 
