@@ -26,7 +26,7 @@ body {
 }
 
 main {
-    padding-top: 125px;
+    padding-top: 25px;
 }
 
 // utilities
@@ -34,9 +34,25 @@ main {
     border: 1px solid red;
 }
 
-// nav 
-nav {
+/* -------------------------------------------------------------------------------- */
+/* ! Header */
+/* -------------------------------------------------------------------------------- */
+.pre-header {
+    background-color: $main-color;
+    height: 18px;
     width: 100%;
-    background-color: $main-white-color;
-    padding: 10px;
+}
+
+header {
+    .nav-link {
+        text-transform: uppercase;
+        color: $text-color;
+        font-weight: 800;
+    }
+
+    .navbar-nav .nav-link.active {
+        font-weight: bold;
+        color: $main-color;
+        border-bottom: 2px solid $main-color;
+    }
 }
