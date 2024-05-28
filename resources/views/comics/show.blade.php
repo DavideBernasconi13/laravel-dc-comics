@@ -12,7 +12,7 @@
             <div>
                 Tipo: {{$comic->type}}
             </div>
-            <div>
+            <div class="background-primary">
                 Serie: {{$comic->series}}
             </div>
             <div>
