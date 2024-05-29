@@ -26,13 +26,14 @@
                             Type: <span>{{ $comic->type }}</span>
                         </p>
                     </div>
-                    <div class="card-footer">
-                        <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi dettaglio</a>
-                        <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Modifica</a>
+                    <div class="card-footer d-flex">
+                        <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary gx-2">Vedi dettaglio</a>
+                        <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary gx-2">Modifica</a>
                         <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" id="comicDelete">
+                            <button type="submit" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" id="comicDelete">
                                 Elimina
                             </button>
                         </form>
