@@ -8,11 +8,21 @@
         <h1>
             Add new comic
         </h1>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error )
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        
+        @endif
         <form action="{{route('comics.store')}}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
-                <input type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title" required>
+                <input type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
@@ -24,19 +34,19 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input type="text" class="form-control" id="price" name="price" required>
+                <input type="text" class="form-control" id="price" name="price">
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Serie</label>
-                <input type="text" class="form-control" id="series" name="series" required>
+                <input type="text" class="form-control" id="series" name="series">
             </div>
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Data di vendita</label>
-                <input type="text" class="form-control" id="sale_date" name="sale_date" required>
+                <input type="text" class="form-control" id="sale_date" name="sale_date">
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
-                <select class="form-control" id="type" name="type" required>
+                <select class="form-control" id="type" name="type">
                     <option value="comic book">comic book</option>
                     <option value="graphic novel">graphic novel</option>
                 </select>

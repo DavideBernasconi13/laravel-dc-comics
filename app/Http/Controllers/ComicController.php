@@ -35,21 +35,17 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-
-    // valido  i dati 
-    // $request->validate([
-    //     'title'=>'required | max:255 | min:3',
-    //     'description' => 'nullable', 
-    //     'image' => 'nullable | max:255',
-    // ]); 
-
-    // salva i dati e redirect alla index
     {
+        // valido  i dati 
+        $request->validate([
+            'title' => 'required | max:255 | min:3',
+        ]);
+        // salva i dati e redirect alla index
         $form_data = $request->all();
         $new_comic = new Comic();
         $new_comic->fill($form_data);
         $new_comic->save();
-        return redirect()->route("comics.index")-> with ('success', 'Nuovo fumetto inserito!');
+        return redirect()->route("comics.index")->with('success', 'Nuovo fumetto inserito!');
     }
 
     /**
