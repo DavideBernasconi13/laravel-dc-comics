@@ -29,7 +29,13 @@
                     <div class="card-footer">
                         <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi dettaglio</a>
                         <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Modifica</a>
-                        <a href="#" class="btn btn-danger">Cancella</a>
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" id="comicDelete">
+                                Elimina
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
