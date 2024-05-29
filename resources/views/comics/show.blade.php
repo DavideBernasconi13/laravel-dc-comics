@@ -12,13 +12,22 @@
             <div>
                 Tipo: {{$comic->type}}
             </div>
-            <div class="background-primary">
+            <div>
                 Serie: {{$comic->series}}
             </div>
-            <div>
+            <div class="mb-4">
                 Data di vendita: {{$comic->sale_date}}
             </div>
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    id="comicDelete">
+                    Elimina
+                </button>
+            </form>
         </div>
     </div>
+
 </section>
 @endsection

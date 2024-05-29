@@ -8,6 +8,12 @@
     <h1>
         Current Series
     </h1>
+    @if(session()->has('error'))
+        <div class="alert alert-danger my-5">{{session()->get('error')}}</div>
+    @endif
+    @if(session()->has('success'))
+        <div class="alert alert-success my-5">{{session()->get('success')}}</div>
+    @endif
     <div class="row">
 
         @foreach ($comics as $comic)
@@ -29,14 +35,6 @@
                     <div class="card-footer d-flex justify-content-between">
                         <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary gx-2">Vedi dettaglio</a>
                         <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary gx-2">Modifica</a>
-                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" id="comicDelete">
-                                Elimina
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>

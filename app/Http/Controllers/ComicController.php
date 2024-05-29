@@ -35,13 +35,21 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
+    // valido  i dati 
+    // $request->validate([
+    //     'title'=>'required | max:255 | min:3',
+    //     'description' => 'nullable', 
+    //     'image' => 'nullable | max:255',
+    // ]); 
+
     // salva i dati e redirect alla index
     {
         $form_data = $request->all();
         $new_comic = new Comic();
         $new_comic->fill($form_data);
         $new_comic->save();
-        return redirect()->route("comics.index");
+        return redirect()->route("comics.index")-> with ('success', 'Nuovo fumetto inserito!');
     }
 
     /**
@@ -77,9 +85,8 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
         $comic->update($form_data);
-        return redirect()->route("comics.index");
+        return redirect()->route("comics.index")->with('success', 'Fumetto modificato');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -89,6 +96,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route("comics.index")->with('message', 'Comic deleted!');
+        return redirect()->route("comics.index")->with('error', 'Fumetto cancellato con successo!');
     }
 }
