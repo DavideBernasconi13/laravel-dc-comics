@@ -26,7 +26,7 @@
                             Type: <span>{{ $comic->type }}</span>
                         </p>
                     </div>
-                    <div class="card-footer d-flex">
+                    <div class="card-footer d-flex justify-content-between">
                         <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary gx-2">Vedi dettaglio</a>
                         <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary gx-2">Modifica</a>
                         <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
