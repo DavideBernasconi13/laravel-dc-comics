@@ -42,7 +42,7 @@
                 Sei sicuro che vuoi elimnare l'elemento?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Torna indietro</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Torna indietro</button>
                 <button type="button" class="btn btn-danger">Sì elimina!</button>
             </div>
         </div>
